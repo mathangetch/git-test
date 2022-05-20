@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding-left: 1%;
+      padding-right: 1%;
+
+    }
+
+
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      /* border: 1px solid #dddddd; */
+      text-align: left;
+      padding: 7px;
+    }
+
+    .rem td {
+      border: 2px solid #dddddd;
+
+      padding: 7px;
+
+      text-align: center
+    }
+
+    .rem th {
+      border: 2px solid #dddddd;
+
+      padding: 7px;
+      text-align: center
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    .thiscolor {
+      background-color: #d8d6d6;
+      border: 2px solid #dddddd;
+      text-align: left;
+      padding: 7px;
+    }
+
+    table {
+      margin-bottom: 1%;
+      border-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th rowspan="2"><img src="https://myrmc-stores.s3.ap-south-1.amazonaws.com/image_pdf/invoice_logo.png" widht="50%" height="50px"></th>
+      <th style="font-size: 21px;" width="30%" colspan="2">Original Recipient</th>
+    </tr>
+    <tr>
+      <th style="font-size:35px; color:#ff1744">Tax Invoice</th>
+    </tr>
+
+  </table>
+
+
+  <table width="100%">
+
+    <tr>
+      <th width="51%">MyRMC Solutions Private Limited</th>
+      <th width="20%"></th>
+      <th width="2%"></th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>B4-06 ,IITM Resarch Park Kanagam Road,</td>
+      <th>Booking ID</th>
+      <th>:</th>
+      <td>{{booking_id}}</td>
+    </tr>
+    <tr>
+      <td>Taramani,Chennai-600113,Tamil Nadu</td>
+      <th>Vechicle No:</th>
+      <th>:</th>
+      <td>{{vehicle_no}}</td>
+    </tr>
+    <tr>
+      <td>phone no: 8489258925</td>
+      <th>Invoice No</th>
+      <th>:</th>
+      <td>{{invoice_no}}</td>
+    </tr>
+    <tr>
+      <td>www.myrmc.in</td>
+      <th>Date:</th>
+      <th>:</th>
+      <td>{{date}}</td>
+    </tr>
+    <tr>
+      <td>GSTIN:{{gstin}}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+  </table>
+
+  <table width="100%">
+
+    <tr>
+      <th width="50%" style="color:#ff1744">Billing To</th>
+
+      <th width="50%"   >Trip Details</th>
+
+    </tr>
+    <tr>
+      <td>{{company_name}}</td>
+
+      <th>From Address:</th>
+
+
+    </tr>
+    <tr>
+      <td>{{bill_address1}}</td>
+
+
+      <td>{{form_address2}}</td>
+
+    </tr>
+    <tr>
+      <td>{{bill_address1}}</td>
+
+      <td>{{form_address2}}</td>
+    </tr>
+    <tr>
+      <td>{{contact_number}}</td>
+
+      <th>To Address:</th>
+
+    </tr>
+    <tr>
+      <td>{{web_site}}</td>
+
+      <td>{{to_address1}}</td>
+
+    </tr>
+    <tr>
+      <td>GSTIN:33AANCM6561A1ZM</td>
+
+      <td>{{to_address2}}</td>
+    </tr>
+
+
+  </table>
+
+  <table class="rem">
+    <tr>
+      <th>S.No</th>
+      <th>Description</th>
+      <th>Trip KMS</th>
+      <th>Trip Amount</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td style="text-align:left">{{description1}}</td>
+      <td>{{trip_km}}</td>
+      <td >{{total_trip_amount}}</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td style="text-align:left">{{description2}}</td>
+      <td></td>
+      <td>{{balance_amount}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <th style="text-align:left;color:#ff1744">{{total_trip_amount}}</th>
+      <td></td>
+
+      <th style="color:#ff1744">{{total_trip_amount}}</th>
+    </tr>
+  </table>
+
+  <table class="rem">
+    <tr>
+      <th rowspan="2">HSC/SAC</th>
+      <th rowspan="2">Taxable Amount</th>
+      <th colspan="2">CGST</th>
+      <th colspan="2">SGST</th>
+      <th rowspan="2">Total Amount</th>
+    </tr>
+    <tr>
+      <td>Rate</td>
+      <td>Amount</td>
+      <td>Rate</td>
+      <td>Amount</td>
+    </tr>
+
+    <tr>
+      <th>83024118</th>
+      <td >{{total_trip_amount}}</td>
+      <td>9%</td>
+      <td >{{cgst_amount}}</td>
+      <td>9%</td>
+      <td >{{sgst_amount}}</td>
+      <th style="text-align:right;color:#ff1744">{{total_amount}}</th>
+    </tr>
+  </table>
+
+  <table>
+
+    <tr>
+      <th width="70%" style="color:#ff1744">Terms of Conditions</th>
+      <th width="20%">Grand Total</th>
+      <th>:</th>
+      <th style="text-align:right ;color:#ff1744">{{total_trip_amount}}</th>
+
+    </tr>
+    <tr>
+      <td>All invoice are governed under the terms & Condition of the company mentioned in the website</td>
+      <th>Tax Amount<br>(gst 18%)</th>
+      <th>:</th>
+      <th style="text-align:right;color:#ff1744">{{gst_amount}}</th>
+
+    </tr>
+    <tr>
+      <td></td>
+      <th>Grand Total<br> (Including tax)</th>
+      <th>:</th>
+      <th style="text-align:right;color:#ff1744">{{total_amount}}</th>
+    </tr>
+
+  </table>
+
+
+  <table class="thiscolor">
+    <tr>
+      <th width="5%">Note: </th>
+      <td>This invoice is computer generated and does not require any signature</td>
+    </tr>
+  </table>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
